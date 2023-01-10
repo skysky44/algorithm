@@ -1,5 +1,4 @@
 a, b = map(int, input().split())
-print(a+b)
-print(a-b)
-print(a*b)
-print(a//b) # 소수점이하 버림
+calculation = [a+b, a-b, a*b, a//b]
+for result in calculation:
+    print(result)
