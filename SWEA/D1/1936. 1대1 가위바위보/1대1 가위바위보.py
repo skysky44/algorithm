@@ -1,14 +1,9 @@
 x, y = map(int, input().split())
-
-if x == 1 and y == 3:
-    print('A')
-elif x == 1 and y == 2:
-    print('B')
-elif x == 2 and y == 3:
-    print('B')
-elif x == 2 and y == 1:
-    print('A')
-elif x == 3 and y == 1:
-    print('B')
-elif x == 3 and y == 2:
-    print('A')
+game = {}
+game[1, 2] = 'B' # B가 이기는 경우 1
+game[2, 3] = 'B' # B가 이기는 경우 2
+game[3, 1] = 'B' # B가 이기는 경우 3
+game[1, 3] = 'A' # A가 이기는 경우 1
+game[2, 1] = 'A' # A가 이기는 경우 2
+game[3, 2] = 'A' # A가 이기는 경우 3
+print(game[x, y])
