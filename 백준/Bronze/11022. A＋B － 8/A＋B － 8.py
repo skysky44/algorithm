@@ -1,5 +1,4 @@
 T = int(input())
-for t in range(T):
+for x in range(1, T+1):
     A, B = map(int, input().split())
-    result = f'Case #{t+1}: {A} + {B} = {A + B}' 
-    print(result)
+    print(f'Case #{x}: {A} + {B} = {A+B}')
