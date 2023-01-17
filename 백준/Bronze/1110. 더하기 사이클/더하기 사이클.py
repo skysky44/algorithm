@@ -1,12 +1,11 @@
-N = int(input())
-number = N
+n = int(input())
+first_number = n
 count = 0
 while True:
-    a = number//10
-    b = number % 10
-    c = (a + b) % 10
-    number = b*10 + c
+    tens = n//10
+    units = n % 10
+    n = units*10 + (tens+units) % 10
     count += 1
-    if N == number:
+    if first_number == n:
         break
 print(count)
