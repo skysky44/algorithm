@@ -1,21 +1,9 @@
+# 함수 재귀 안쓴 풀이
 import sys
-sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
 
 dx = [-1, 1, 0, 0, -1, -1, 1, 1]
 dy = [0, 0, -1, 1, -1, 1, -1, 1]
-
-
-def search(grid, x, y):
-    if grid[x][y] == 0:  # 0을 만나면 멈춤
-        return
-    grid[x][y] = 0
-    for i in range(8):  # 상하좌우대각선 모두 확인
-        if 0 <= x+dx[i] < h and 0 <= y+dy[i] < w:  # 범위안에 있는지 확인
-            if grid[x+dx[i]][y+dy[i]] == 1:  # 1이 있다면 0으로 바꿔줌
-                grid[x+dx[i]][y+dy[i]] == 0
-                search(grid, x+dx[i], y+dy[i])  # 탐색 반복
-
 
 # 입력을 받아서 인접 행렬로 만들기
 while True:
@@ -30,5 +18,14 @@ while True:
         for y in range(w):
             if grid[x][y] == 1:  # 값이 1이면 0으로 바꿔주고 계속 ..탐색?DFS?
                 cnt += 1
-                search(grid, x, y)
+                grid[x][y] = 0
+                stack = []
+                stack.append((x, y))
+                while stack:
+                    a, b = stack.pop()
+                    for i in range(8):  # 상하좌우대각선 모두 확인
+                        if 0 <= a+dx[i] < h and 0 <= b+dy[i] < w:  # 범위안에 있는지 확인
+                            if grid[a+dx[i]][b+dy[i]] == 1:  # 1이 있다면 0으로 바꿔줌
+                                grid[a+dx[i]][b+dy[i]] = 0
+                                stack.append((a+dx[i], b+dy[i]))  # 탐색 반복
     print(cnt)
