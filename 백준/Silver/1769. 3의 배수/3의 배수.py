@@ -1,12 +1,12 @@
 n = input()
-c=0
+cnt = 0
 while int(n)>=10:
-    t = 0
-    for i in range(len(n)):
-        t+=int(n[i])
-    n=str(t)
-    c+=1
-print(c)
+    total = 0
+    for i in str(n):
+        total += int(i)
+    n = total
+    cnt += 1
+print(cnt)
 if int(n)%3==0:
     print("YES")
 else:   
