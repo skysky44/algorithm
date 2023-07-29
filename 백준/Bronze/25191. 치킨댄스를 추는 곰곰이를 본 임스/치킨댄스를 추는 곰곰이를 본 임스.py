@@ -1,8 +1,8 @@
-Chicken = int(input())
-Coke, Beer = map(int, input().split())
-Eat = Coke//2 + Beer
+chicken = int(input())
+coke, beer = map(int, input().split())
+eat = coke//2 + beer
 
-if Chicken >= Eat :
-    print(Eat)
+if chicken >= eat :
+    print(eat)
 else :
-    print(Chicken)
+    print(chicken)
