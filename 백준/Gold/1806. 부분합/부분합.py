@@ -9,8 +9,11 @@ min_length = N+1
 start, end = 0, 0
 partial_sum = 0
 
-while start < N:
-    if partial_sum < S and end < N:
+
+while True:
+    if partial_sum < S:
+        if end == N:
+            break
         partial_sum += sequence[end]
         end += 1
     elif partial_sum >= S:
@@ -18,8 +21,7 @@ while start < N:
             min_length = end - start
         partial_sum -= sequence[start]
         start += 1
-    else:
-        break
+
 
 if min_length != N+1:
     print(min_length)
