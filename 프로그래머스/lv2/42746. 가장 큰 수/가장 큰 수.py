@@ -10,3 +10,5 @@ def solution(numbers):
         answer = '0'
         
     return answer
+
+# 거의 암기..
