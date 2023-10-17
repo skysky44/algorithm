@@ -1,4 +1,3 @@
-
 N = int(input())
 best_scores = []
 
