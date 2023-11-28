@@ -38,3 +38,5 @@ def solution(rectangle, characterX, characterY, itemX, itemY):
                     visited[nx][ny] = visited[x][y] + 1 # 거리 누적
 
     return answer
+
+# *2를 해서 해결 해야함
